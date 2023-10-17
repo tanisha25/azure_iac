@@ -2,28 +2,20 @@
 Terraform code for provisioning the resources in Azure
 
 ## Code structure
-**azure_iac**/
-│
-├── main.tf
-├── terraform.tfvars
-├── output.tf
-├── variables.tf
-├── providers.tf
-│
-├── **modules**/
-│   ├── **virtual-network**/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── output.tf
-│   │
-│   ├── **storage-account**/
-│   │   ... (similar structure as virtual-network)
-│   │
-│   ├── **random-name**/
-│   │   ... (similar structure as virtual-network)
-│   │
-│   └── **resource-group**/
-│       ... (similar structure as virtual-network)
+**azure_iac**
+├── main.tf               # The primary entry point for Terraform where resources are defined.
+├── terraform.tfvars      # Contains variable values that are applied across the configuration.
+├── output.tf             # Defines the outputs of your configuration.
+├── variables.tf          # Contains variable definitions used across the configuration.
+├── providers.tf          # Specifies and configures the providers required by the configuration.
+└── modules/              # Directory for all module definitions.
+    ├── virtual-network/  # Module to create and manage Azure Virtual Networks.
+    │   ├── main.tf       
+    │   ├── variables.tf  
+    │   └── output.tf     
+    ├── storage-account/  # Module for Azure Storage Account resources.
+    ├── random-name/      # Module to generate random names for resources.
+    └── resource-group/   # Module to manage Azure Resource Groups.
 
 
 main.tf: This is the primary entry point for Terraform. Here, you'll define which modules you want to use and any resources you want to create at the root level.
