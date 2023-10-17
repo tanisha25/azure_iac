@@ -2,7 +2,7 @@
 Terraform code for provisioning the resources in Azure
 
 ## Code structure
-**azure_iac**
+**azure_iac**/
 ├── main.tf               
 ├── terraform.tfvars      
 ├── output.tf             
